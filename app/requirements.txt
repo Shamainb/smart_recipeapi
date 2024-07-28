@@ -1,6 +1,0 @@
-fastapi
-uvicorn
-firebase-admin
-pyjwt
-pydantic
-python-dotenv
