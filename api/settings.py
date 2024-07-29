@@ -123,7 +123,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn')
 
-API_KEY = "f4c69a57272244cf9a45305bfbb26a14"
+API_KEY = "**********"
 
 
 # Default primary key field type
