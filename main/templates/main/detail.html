@@ -1,0 +1,31 @@
+<!-- main/detail.html -->
+{% extends 'main/base.html' %}
+
+{% block content %}
+<div>
+    <a href="{% url 'main:results' %}?cat={{ cat }}&query={{ query }}" class="btn btn-primary">Back to Results</a>
+    <a href="{% url 'main:home' %}" class="btn btn-secondary">Home</a>
+</div>
+<h1>{{ detail.title }}"</h1>
+<img src="{{ detail.image }}" alt="{{ detail.title }}">
+<p>{{ detail.summary|safe }}</p>
+<ul>
+	<li><strong>Ready in:</strong> {{ detail.readyInMinutes }} minutes</li>
+    <li><strong>Servings:</strong> {{ detail.servings }}</li>
+    <li><strong>Ingredients:</strong>
+        <ul>
+            {% for ingredient in detail.extendedIngredients %}
+            <li>{{ ingredient.original }}</li>
+            {% endfor %}
+        </ul>
+    </li>
+    <li><strong>Instructions:</strong>
+        <ol>
+            {% for step in detail.analyzedInstructions.0.steps %}
+            <li>{{ step.step }}</li>
+            {% endfor %}
+        </ol>
+    </li>
+</ul>
+<div>
+{% endblock %}
