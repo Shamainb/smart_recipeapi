@@ -1,43 +1,88 @@
-Smart Recipe api
+Smart Recipe API
 
-## Overview
+Features
+Recipe Search: Allows users to search for recipes based on various criteria.
+Recipe Details: Provides detailed information about each recipe, including ingredients and preparation steps.
+Responsive Design: Ensures a user-friendly interface across different devices.
 
-The Smart Recipe API allows users to search for recipes, manage their favorite recipes, and generate grocery lists based on selected recipes. This API leverages FastAPI for the backend framework and Firebase for user authentication and data storage. It uses the Spoonacular API to fetch recipe data.
+Technology Stack
+Backend Framework: Django
+Frontend Technologies: HTML, CSS
+API Integration: Spoonacular API
 
-## Features
+Installation
 
-- **User Authentication:**
-  - Sign up and log in using Firebase Authentication.
-  - Secure endpoints using JWT tokens.
+To run the Smart Recipe API locally, follow these steps:
 
-- **Recipe Management:**
-  - Search for recipes by ingredients, cuisine, or dietary restrictions.
-  - Retrieve detailed recipe information.
+Clone the Repository:
+git clone https://github.com/yourusername/smart-recipe-api.git
+cd smart-recipe-api
 
-- **Favorites:**
-  - Allow users to save their favorite recipes.
-  - Retrieve a list of favorite recipes.
+Create a Virtual Environment:
+python -m venv venv
+source venv/bin/activate
 
-- **Grocery List Generator:**
-  - Generate a grocery list based on selected recipes.
-  - Allow users to mark items as purchased.
+Install Dependencies:
+pip install -r requirements.txt
 
-- **User Profiles:**
-- Store user preferences, dietary restrictions, and favorite ingredients in Firebase Firestore.
-  - Customize recipe recommendations based on user profiles.
+Configure Environment Variables:
+SPOONACULAR_API_KEY=your_spoonacular_api_key
 
-## Technology Stack
+Run Migrations:
+python manage.py migrate
 
-- **Backend Framework:** FastAPI
-- **Database:** Firebase Firestore
-- **Authentication:** Firebase Authentication
-- **Recipe Data:** Spoonacular API
+Start the Development Server:
+python manage.py runserver
 
-## Setup Instructions
+Open Your Browser:
+Visit http://127.0.0.1:8000 to access the application.
 
-1. Clone the repository.
-2. Create a virtual environment and install dependencies:
-   ```bash
-   python -m venv venv
-   source venv/bin/activate
-   pip install -r requirements.txt
+API Endpoints
+
+Search Recipes
+Endpoint: /api/recipes/search/
+Method: GET
+Parameters:
+query (string): Search term for recipes
+Response:
+json
+{
+  "recipes": [
+    {
+      "id": "recipe_id",
+      "title": "Recipe Title",
+      "summary": "Brief description",
+      "image": "URL to image"
+    }
+  ]
+}
+
+Recipe Details
+Endpoint: /api/recipes/{id}/
+Method: GET
+Parameters:
+id (string): Recipe ID
+Response:
+json
+{
+  "id": "recipe_id",
+  "title": "Recipe Title",
+  "ingredients": [
+    "Ingredient 1",
+    "Ingredient 2"
+  ],
+  "instructions": "Cooking instructions here",
+  "image": "URL to image"
+}
+
+Development
+Code Style: Follow PEP 8 guidelines.
+Testing: Add and run tests in the tests directory.
+Contributing: Open issues or submit pull requests for improvements.
+
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+Acknowledgments
+Spoonacular API: For providing the recipe data.
+Django: For the robust backend framework.
