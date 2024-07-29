@@ -6,6 +6,7 @@ Recipe Details: Provides detailed information about each recipe, including ingre
 Responsive Design: Ensures a user-friendly interface across different devices.
 
 Technology Stack
+
 Backend Framework: Django
 
 Frontend Technologies: HTML, CSS
