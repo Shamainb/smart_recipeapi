@@ -7,7 +7,9 @@ Responsive Design: Ensures a user-friendly interface across different devices.
 
 Technology Stack
 Backend Framework: Django
+
 Frontend Technologies: HTML, CSS
+
 API Integration: Spoonacular API
 
 Installation
@@ -15,8 +17,8 @@ Installation
 To run the Smart Recipe API locally, follow these steps:
 
 Clone the Repository:
-git clone https://github.com/yourusername/smart-recipe-api.git
-cd smart-recipe-api
+git clone https://github.com/yourusername/smartrecipeapi.git
+cd smart-ecipeapi
 
 Create a Virtual Environment:
 python -m venv venv
