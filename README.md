@@ -2,7 +2,9 @@ Smart Recipe API
 
 Features
 Recipe Search: Allows users to search for recipes based on various criteria.
+
 Recipe Details: Provides detailed information about each recipe, including ingredients and preparation steps.
+
 Responsive Design: Ensures a user-friendly interface across different devices.
 
 Technology Stack
